@@ -20,7 +20,7 @@ Alternatively, to use the models in python:
 3. Rescale the image intensity to the range \[0,1\], e.g. for 8 bit images divide by 255.
 
 The prediction scores and class values can then be found using our MISO library by:
-```
+```python
 import tensorflow.keras.backend as K
 
 # Load graph
