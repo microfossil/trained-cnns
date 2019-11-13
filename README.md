@@ -24,6 +24,7 @@ The prediction scores and class values can then be found using our MISO library 
 import tensorflow.keras.backend as K
 
 # Load graph
+source = r'C:/Path/To/The/CNN/frozen_model.pb'
 session = K.get_session()
 with gfile.Open(source, 'rb') as f:
     graph_def = tf.GraphDef()
@@ -45,4 +46,4 @@ for i in range(0, len(images), batch_size):
 preds = np.concatenate(preds, axis=0)
 pred_cls = np.argmax(preds, axis=1)
 ```
-where `input_tensor` and `output_tensor` are the operation names of input and output (preds) tensors described in the `network_info.xml` file with `:0` appended.
+where `input_tensor` and `output_tensor` are the operation names of input and output (preds) tensors described in the `network_info.xml` file with `:0` appended, and `source` is the path to the `frozen_model.pb` file.
