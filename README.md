@@ -46,4 +46,9 @@ for i in range(0, len(images), batch_size):
 preds = np.concatenate(preds, axis=0)
 pred_cls = np.argmax(preds, axis=1)
 ```
-where `input_tensor` and `output_tensor` are the operation names of input and output (preds) tensors described in the `network_info.xml` file with `:0` appended, and `source` is the path to the `frozen_model.pb` file.
+where 
+- `input_tensor` and `output_tensor` are the operation names of input and output (preds) tensors described in the `network_info.xml` file with `:0` appended
+- `source` is the path to the `frozen_model.pb` file.
+- `images` are your preprocessed images
+
+The output values (numerical) correspond to the label entries in `network_info.xml`.
